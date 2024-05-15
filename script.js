@@ -32,7 +32,7 @@ function createPassword(){
     PASSWORD_BOX.value = password;
 }
 
-function copyPassword(){
+function handleOnClickCopyPassword(){
     PASSWORD_BOX.select();
     document.execCommand('copy');
 }
