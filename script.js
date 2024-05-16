@@ -5,12 +5,6 @@ const LOWER_CASE = "abcdefhijklmnopqrstuvwxyz";
 const NUMBER = "0123456789";
 const SYMBOL = "!@#$%^&*()_+~";
 const ALL_CHARS = UPPER_CASE + LOWER_CASE + NUMBER + SYMBOL;
-const ALL_CHARACTERS_IDS = [
-    UPPER_CASE,
-    LOWER_CASE,
-    NUMBER,
-    SYMBOL
-]
 const ELEMENTS_IDS = {
     title: "title",
     headerPrefix: "headerPrefix",
@@ -24,6 +18,9 @@ const LABELS = {
     placeholderPassword: "password",
     [ELEMENTS_IDS.buttonGeneratePassword]: "Generate password"
 };
+function handleClickButtonGeneratePassword() {
+    createPassword()
+}
 
 function createPassword(){
     let password = "";
