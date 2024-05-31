@@ -19,7 +19,18 @@ const LABELS = {
     [ELEMENTS_IDS.buttonGeneratePassword]: "Generate password"
 };
 function handleClickButtonGeneratePassword() {
-    createPassword()
+    const CHECKBOXES_CONTAINER_ELEMENT = document.querySelector('#checkboxes-container');
+    const checkboxes = CHECKBOXES_CONTAINER_ELEMENT.querySelectorAll('input[type=checkbox]');
+
+    for(let i = 0; i < checkboxes.length; i++) {
+        const checkbox = checkboxes[i];
+        const validationInfo = validateCheckbox(checkbox);
+
+        if(!validationInfo.isValidationSuccess) {
+            alert(validationInfo.errorMessage);
+            break;
+        }
+    }
 }
 
 function createPassword(){
@@ -61,5 +72,34 @@ function assignLabelToTextContentByElementId(label, elementId) {
     element.textContent = label;
 }
 
+function checkValidationForCheckboxes() {
+    const CHECKBOXES_CONTAINER_ELEMENT = document.querySelector('#checkboxes-container');// checkboxContainerElement etc. TODO
+    const CHECKBOXES = CHECKBOXES_CONTAINER_ELEMENT.querySelectorAll('input[type=checkbox]');
 
-loadLabels();
+}
+function validateCheckbox(checkbox) {
+        const CHECKBOXES_CONTAINER_ELEMENT = document.querySelector('#checkboxes-container');// checkboxContainerElement etc. TODO
+        const CHECKBOXES = CHECKBOXES_CONTAINER_ELEMENT.querySelectorAll('input[type=checkbox]');
+
+        const isValidationSuccess = isAnyCheckboxChecked(CHECKBOXES);
+        const errorMessage = isValidationSuccess ? '' : 'At lest one checkbox must be selected.';
+
+        return {
+            isValidationSuccess: isValidationSuccess,
+            errorMessage: errorMessage
+        };
+    }
+
+    function isAnyCheckboxChecked(CHECKBOXES) {
+        for (let i = 0; i < CHECKBOXES.length; i++) {
+            if (CHECKBOXES[i].checked) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    loadLabels();
+}

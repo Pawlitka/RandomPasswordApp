@@ -4,25 +4,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title id="title">Random Password Generator</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
             <h1 id="headerPrefix">Generate a</h1>
             <h1><span id="headerSuffix">RANDOM PASSWORD</span></h1>
-                <div class="container-checkboxes">
-                <h1>Choose your symbols in password</h1>
-                <p><input type="checkbox">Upper case letters</p>
-                <p><input type="checkbox">Lower case letters </p>
-                <p><input type="checkbox">Numbers</p>
-                <p><input type="checkbox">Symbols</p>
+                <div class="container-checkboxes" id="checkboxes-container">
+                    <div class="toggle-pill-color">
+                        <input type="checkbox" id="pill3" name="check">
+                        <label for="pill3"></label>
+                    </div>
+<!--                    <h1>Choose your symbols in password</h1>-->
+<!--                    <input type="checkbox" id="checkbox1" required>-->
+<!--                    <label for="checkbox1">Upper case letters</label>-->
+<!--                    <p><input type="checkbox">Lower case letters </p>-->
+<!--                    <p><input type="checkbox">Numbers</p>-->
+<!--                    <p><input type="checkbox">Symbols</p>-->
                 </div>
             <div class="display">
-                <input type="text" id="password" placeholder="password"/>
+                <input type="text" id="password" placeholder="PASSWORD"/>
                 <img src="copy.png" alt="copy.png" onclick="handleClickCopyPassword()"/>
             </div>
             <button onclick="handleClickButtonGeneratePassword()">
                 <img src="generate.png" alt="generate.png"/>
-                <span id="buttonGeneratePassword">generate password</span>
+                <span id="buttonGeneratePassword">GENERATE</span>
             </button>
         </div>
 
