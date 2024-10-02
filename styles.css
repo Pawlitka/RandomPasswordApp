@@ -82,3 +82,29 @@ body {
     border-radius: 50px;
     cursor: pointer;
 }
+
+.options-container {
+    background: #172B23;
+    width: 460px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 40px;
+}
+
+.options-container h2 {
+    font-size: 16px;
+    margin-top: -30px;
+}
+
+.password-length {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0.5rem;
+}

@@ -9,6 +9,13 @@
         <div class="container">
             <h1 id="headerPrefix">Generate a</h1>
             <h1><span id="headerSuffix">RANDOM PASSWORD</span></h1>
+            <div class="options-container">
+                <h2 id="options-box"><span>OPTIONS FOR PASSWORD</span></h2>
+                <div class="password-length">
+                    <label for="passwordlength">Password Length: </label>
+                    <input type="number" name="passwordlength" id="passwordlength" min="1"/>
+                </div>
+            </div>
             <div class="display">
                 <input type="text" id="password" placeholder="password"/>
                 <img src="copy.png" alt="copy.png" onclick="handleClickCopyPassword()"/>
